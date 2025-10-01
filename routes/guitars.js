@@ -51,7 +51,7 @@ router.post('/', ensureAuth, jsonParser, async function (req, res, next) {
 });
 
 /* DELETE specified Guitar */
-router.delete('/:guitarId', ensureAuth, async function (req, res, next) {
+router.delete('delete/:guitarId', ensureAuth, async function (req, res, next) {
 	const result = await guitarService.delete(req.params.guitarId);
 	res.json(result).status(200);
 });
